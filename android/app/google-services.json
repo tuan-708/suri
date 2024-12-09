@@ -1,0 +1,62 @@
+{
+  "project_info": {
+    "project_number": "395483272163",
+    "project_id": "suri-b05d4",
+    "storage_bucket": "suri-b05d4.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:395483272163:android:c6a95dd08d6828b137c6d6",
+        "android_client_info": {
+          "package_name": "com.dion.suri_store"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "395483272163-agpk2cg1pl2nlpkirt3ci0hg3guvrflq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dion.suri_store",
+            "certificate_hash": "49bdc2b7ba42697acb80676c409ea99bfe144610"
+          }
+        },
+        {
+          "client_id": "395483272163-mvjigiarcdfc1qa63vu07u17dft4m00e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dion.suri_store",
+            "certificate_hash": "f389812b6ede5f7078fb956d3da6e001c4056347"
+          }
+        },
+        {
+          "client_id": "395483272163-3an8av8ei42jspc8ghd9gevbe64o70bh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGd4Gu1BRyDz5_rkqMxWGRz1PFN9a0KWk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "395483272163-3an8av8ei42jspc8ghd9gevbe64o70bh.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "395483272163-bp3rq2cs3kvnf11alom79v6quk2rcm3a.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.dion.suristore"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

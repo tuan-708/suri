@@ -1,0 +1,123 @@
+import 'package:suri_checking_event_app/features/gift/domain/entities/gift_account_entity.dart';
+
+class GiftAccountModel extends GiftAccountEntity {
+  const GiftAccountModel({
+    String? eventGiftName,
+    String? accountName,
+    String? accountGiftStatusName,
+    String? giftName,
+    String? eventName,
+    String? eventPhoto,
+    String? eventInfo,
+    String? eventBanner,
+    DateTime? eventStartDate,
+    DateTime? eventEndDate,
+    String? photo,
+    double? price,
+    required bool isSender,
+    required int id,
+    required int active,
+    String? name,
+    String? info,
+    String? description,
+    required int eventGiftId,
+    required int accountId,
+    required int accountGiftStatusId,
+    DateTime? createdTime,
+    String? account,
+    String? accountGiftStatus,
+    String? eventGift,
+  }) : super(
+          eventGiftName: eventGiftName,
+          accountName: accountName,
+          accountGiftStatusName: accountGiftStatusName,
+          giftName: giftName,
+          eventName: eventName,
+          eventPhoto: eventPhoto,
+          eventInfo: eventInfo,
+          eventBanner: eventBanner,
+          eventStartDate: eventStartDate,
+          eventEndDate: eventEndDate,
+          photo: photo,
+          price: price,
+          isSender: isSender,
+          id: id,
+          active: active,
+          name: name,
+          info: info,
+          description: description,
+          eventGiftId: eventGiftId,
+          accountId: accountId,
+          accountGiftStatusId: accountGiftStatusId,
+          createdTime: createdTime,
+          account: account,
+          accountGiftStatus: accountGiftStatus,
+          eventGift: eventGift,
+        );
+
+  factory GiftAccountModel.fromJson(Map<String, dynamic> json) {
+    return GiftAccountModel(
+      eventGiftName: json['eventGiftName'] ?? '',
+      accountName: json['accountName'] ?? '',
+      accountGiftStatusName: json['accountGiftStatusName'] ?? '',
+      giftName: json['giftName'] ?? '',
+      eventName: json['eventName'] ?? '',
+      eventPhoto: json['eventPhoto'] ?? '',
+      eventInfo: json['eventInfo'] ?? '',
+      eventBanner: json['eventBanner'] ?? '',
+      eventStartDate: json['eventStartDate'] != null
+          ? DateTime.parse(json['eventStartDate'])
+          : null,
+      eventEndDate: json['eventEndDate'] != null
+          ? DateTime.parse(json['eventEndDate'])
+          : null,
+      photo: json['photo'] ?? '',
+      price: (json['price'] as num?)?.toDouble(),
+      isSender: json['isSender'],
+      id: json['id'] as int,
+      active: json['active'] as int,
+      name: json['name'] ?? '',
+      info: json['info'] ?? '',
+      description: json['description'] ?? '',
+      eventGiftId: json['eventGiftId'] as int,
+      accountId: json['accountId'] as int,
+      accountGiftStatusId: json['accountGiftStatusId'] as int,
+      createdTime: json['createdTime'] != null
+          ? DateTime.parse(json['createdTime'])
+          : null,
+      account: json['account'] ?? '',
+      accountGiftStatus: json['accountGiftStatus'] ?? '',
+      eventGift: json['eventGift'] ?? '',
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'eventGiftName': eventGiftName,
+      'accountName': accountName,
+      'accountGiftStatusName': accountGiftStatusName,
+      'giftName': giftName,
+      'eventName': eventName,
+      'eventPhoto': eventPhoto,
+      'eventInfo': eventInfo,
+      'eventBanner': eventBanner,
+      'eventStartDate': eventStartDate?.toIso8601String(),
+      'eventEndDate': eventEndDate?.toIso8601String(),
+      'photo': photo,
+      'price': price,
+      'isSender': isSender,
+      'id': id,
+      'active': active,
+      'name': name,
+      'info': info,
+      'description': description,
+      'eventGiftId': eventGiftId,
+      'accountId': accountId,
+      'accountGiftStatusId': accountGiftStatusId,
+      'createdTime': createdTime?.toIso8601String(),
+      'account': account,
+      'accountGiftStatus': accountGiftStatus,
+      'eventGift': eventGift,
+    };
+  }
+}

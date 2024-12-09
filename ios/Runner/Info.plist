@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>Suri Store</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>suri_checking_event_app</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>$(FLUTTER_BUILD_NAME)</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>$(FLUTTER_BUILD_NUMBER)</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.395483272163-bp3rq2cs3kvnf11alom79v6quk2rcm3a</string>
+			</array>
+		</dict>
+	</array>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>UIMainStoryboardFile</key>
+	<string>Main</string>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
+	<key>CADisableMinimumFrameDurationOnPhone</key>
+	<true/>
+	<key>UIApplicationSupportsIndirectInputEvents</key>
+	<true/>
+	<key>NSApplicationSupportUsageDescription</key>
+	<string>Cho phép truy cập vào thư mục Hỗ trợ ứng dụng để lưu file.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Cho phép người dùng truy cập camera để chụp ảnh QR.</string>
+	<key>io.flutter.embedded_views_preview</key>
+	<true/>
+	<key>NSContactsUsageDescription</key>
+	<string>Cho phép truy cập danh bạ để đặt lịch cho người khác nằm trong danh bạ.</string>
+	<key>NSDocumentsFolderUsageDescription</key>
+	<string>Cho phép truy cập vào thư mục Documents để lưu tập tin.</string>
+	<key>NSLibraryUsageDescription</key>
+	<string>Cho phép truy cập vào thư mục Thư viện để lưu tập tin.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Cho phép luôn luôn truy cập vị trí để lấy vị trí người dùng để checking sự kiện</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Cho phép truy cập vị trí để lấy vị trí người dùng để checking sự kiện</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Cho phép truy cập vị trí để lấy vị trí người dùng để checking sự kiện</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Cho phép người dùng truy cập micro ghi âm khi video quay để đánh giá dịch vụ</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Cho phép ứng dụng sử dung thư viện ảnh để cập nhật ảnh đại diện và ảnh bìa</string>
+</dict>
+</plist>

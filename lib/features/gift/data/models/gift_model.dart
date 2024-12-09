@@ -1,0 +1,101 @@
+import 'package:suri_checking_event_app/features/gift/domain/entities/gift_entity.dart';
+
+class GiftModel extends GiftEntity {
+  const GiftModel({
+    required String giftName,
+    required String eventName,
+    required String eventPhoto,
+    required String eventInfo,
+    required DateTime eventStartDate,
+    required DateTime eventEndDate,
+    required String photo,
+    required double price,
+    required bool isSender,
+    required int id,
+    required int active,
+    int? quantity,
+    required String name,
+    String? info,
+    String? description,
+    required DateTime createdTime,
+    required int giftId,
+    required int eventId,
+    dynamic event,
+    dynamic gift,
+    required List<dynamic> accountGifts,
+  }) : super(
+          giftName: giftName,
+          eventName: eventName,
+          eventPhoto: eventPhoto,
+          eventInfo: eventInfo,
+          eventStartDate: eventStartDate,
+          eventEndDate: eventEndDate,
+          photo: photo,
+          price: price,
+          isSender: isSender,
+          id: id,
+          active: active,
+          quantity: quantity,
+          name: name,
+          info: info,
+          description: description,
+          createdTime: createdTime,
+          giftId: giftId,
+          eventId: eventId,
+          event: event,
+          gift: gift,
+          accountGifts: accountGifts,
+        );
+
+  factory GiftModel.fromJson(Map<String, dynamic> json) {
+    return GiftModel(
+      giftName: json['giftName'] ?? '',
+      eventName: json['eventName'] ?? '',
+      eventPhoto: json['eventPhoto'] ?? '',
+      eventInfo: json['eventInfo'] ?? '',
+      eventStartDate: DateTime.parse(json['eventStartDate'] as String),
+      eventEndDate: DateTime.parse(json['eventEndDate'] as String),
+      photo: json['photo'] ?? '',
+      price: json['price'] ?? 0,
+      isSender: json['isSender'] as bool,
+      id: json['id'] as int,
+      active: json['active'] as int,
+      quantity: json['quantity'] as int?,
+      name: json['name'] ?? '',
+      info: json['info'] ?? '',
+      description: json['description'] ?? '',
+      createdTime: DateTime.parse(json['createdTime'] as String),
+      giftId: json['giftId'] as int,
+      eventId: json['eventId'] as int,
+      event: json['event'], // Adjust type if needed
+      gift: json['gift'], // Adjust type if needed
+      accountGifts: json['accountGifts'] as List<dynamic>,
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'giftName': giftName,
+      'eventName': eventName,
+      'eventPhoto': eventPhoto,
+      'eventInfo': eventInfo,
+      'eventStartDate': eventStartDate.toIso8601String(),
+      'eventEndDate': eventEndDate.toIso8601String(),
+      'photo': photo,
+      'price': price,
+      'isSender': isSender,
+      'id': id,
+      'active': active,
+      'quantity': quantity,
+      'name': name,
+      'info': info,
+      'description': description,
+      'createdTime': createdTime.toIso8601String(),
+      'giftId': giftId,
+      'eventId': eventId,
+      'event': event,
+      'gift': gift,
+      'accountGifts': accountGifts,
+    };
+  }
+}

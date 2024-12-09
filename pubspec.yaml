@@ -1,0 +1,127 @@
+name: suri_checking_event_app
+description: Suri Store.
+publish_to: "none"
+
+version: 1.0.7+7
+
+environment:
+  sdk: ">=2.19.6 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  cached_network_image: ^3.2.0
+  flutter_svg: ^0.23.0
+  get: ^4.3.7
+  shared_preferences: ^2.0.6
+  get_it: ^7.2.0
+  google_fonts: ^4.0.3
+  smooth_page_indicator: ^1.2.0+3
+  currency_text_input_formatter: ^2.1.1
+  flutter_masked_text2: ^0.9.1
+  url_launcher: ^6.1.11
+  html_unescape: ^2.0.0
+  flutter_native_timezone: ^2.0.0
+  timezone: ^0.9.4
+  dropdown_button2: ^2.0.1
+  shimmer: ^3.0.0
+  contained_tab_bar_view: ^0.8.0
+  flutter_widget_from_html: ^0.8.4
+  percent_indicator: ^4.2.3
+  dio: ^4.0.0
+  file_picker: 4.6.1
+  image_picker: ^0.8.3+1
+  jwt_decoder: ^2.0.1
+  equatable: ^2.0.5
+  dartz: ^0.10.1
+  cherry_toast: ^1.11.0
+  get_time_ago: ^1.1.8
+  flutter_otp_text_field: ^1.1.1
+  tiengviet: ^1.0.0
+  carousel_slider: ^5.0.0
+  extended_tabs: ^4.0.2
+  pull_to_refresh_flutter3: ^2.0.1
+  transparent_pointer: ^1.0.0
+  image_gallery_saver: ^2.0.3
+  permission_handler: ^10.4.3
+  flutter_barcode_scanner: ^2.0.0
+  qr_code_scanner: ^1.0.1
+  audio_session: ^0.1.13
+  flutter_inappwebview: ^5.8.0
+  flutter_bloc: ^8.1.6
+  sentry_flutter: ^6.22.0
+  logger: ^1.4.0
+  firebase_core: ^2.4.0
+  google_sign_in: ^6.0.2
+  firebase_auth: ^4.8.2
+  the_apple_sign_in: ^1.1.1
+  sign_in_with_apple: ^4.2.0
+  qr_flutter: ^4.0.0
+  widget_zoom: ^0.0.4
+  lottie: ^2.3.2
+  flutter_timer_countdown: ^1.0.7
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/base/
+    - assets/svgs/
+    - assets/images/
+    - assets/gifs/
+
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/assets-and-images/#resolution-aware
+
+  # For details regarding adding assets from package dependencies, see
+  # https://flutter.dev/assets-and-images/#from-packages
+
+  # To add custom fonts to your application, add a fonts section here,
+  # in this "flutter" section. Each entry in this list should have a
+  # "family" key with the font family name, and a "fonts" key with a
+  # list giving the asset and other descriptors for the font. For
+  # example:
+  fonts:
+    - family: SVN
+      fonts:
+        - asset: assets/fonts/SVN-GalleryModern.otf
+    - family: Lexend
+      fonts:
+        - asset: assets/fonts/lexend/Lexend-Black.ttf
+          weight: 900
+        - asset: assets/fonts/lexend/Lexend-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/lexend/Lexend-ExtraBold.ttf
+          weight: 800
+        - asset: assets/fonts/lexend/Lexend-ExtraLight.ttf
+          weight: 200
+        - asset: assets/fonts/lexend/Lexend-Light.ttf
+          weight: 300
+        - asset: assets/fonts/lexend/Lexend-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/lexend/Lexend-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/lexend/Lexend-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/lexend/Lexend-Thin.ttf
+          weight: 100
+  #
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/custom-fonts/#from-packages
