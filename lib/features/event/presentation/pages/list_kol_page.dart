@@ -10,6 +10,7 @@ import 'package:suri_checking_event_app/core/constants/variables/color_constant.
 import 'package:suri_checking_event_app/core/constants/variables/image_path_constant.dart';
 import 'package:suri_checking_event_app/core/helper/dimensions_helper.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:suri_checking_event_app/core/utils/string_valid.dart';
 import 'package:suri_checking_event_app/features/event/data/models/list_kol_paging_payload.dart';
 import 'package:suri_checking_event_app/features/event/data/models/searching_kol_payload.dart';
 import 'package:suri_checking_event_app/features/event/presentation/bloc/event_bloc.dart';
@@ -41,20 +42,32 @@ class _ListKOLPageState extends State<ListKOLPage> {
   TextEditingController keyword = TextEditingController();
 
   void _onRefresh() async {
+    if(StringValid.nullOrEmpty(keyword.text) ){
     pageIndex = 1;
     payload.pageIndex = 1;
     payload.pageSize = 5;
     payload.categoryId = isKOL ? 1001 : 1002;
 
     context.read<EventBloc>().add(GetListKOLPagingEvent(payload));
+    }else{
+         _refreshController.refreshCompleted();
+    }
+
   }
 
   void _onLoading() async {
+        if(StringValid.nullOrEmpty(keyword.text) ){
     pageIndex = pageIndex + 1;
     payload.pageIndex = pageIndex;
     payload.pageSize = 5;
     payload.categoryId = isKOL ? 1001 : 1002;
     context.read<EventBloc>().add(GetListKOLPagingEvent(payload));
+        }else{
+            
+
+            _refreshController.loadComplete();
+        }
+
   }
 
   @override

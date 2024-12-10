@@ -16,6 +16,7 @@ import 'package:suri_checking_event_app/features/event/presentation/pages/event_
 import 'package:suri_checking_event_app/features/event/presentation/pages/event_guide_page.dart';
 import 'package:suri_checking_event_app/features/event/presentation/pages/event_timeline_page.dart';
 import 'package:suri_checking_event_app/features/event/presentation/pages/kol_detail_page.dart';
+import 'package:suri_checking_event_app/features/event/presentation/pages/list_event_page.dart';
 import 'package:suri_checking_event_app/features/event/presentation/pages/queue_table_kol_page.dart';
 import 'package:suri_checking_event_app/features/event/presentation/pages/list_kol_page.dart';
 import 'package:suri_checking_event_app/features/event/presentation/pages/event_register_page.dart';
@@ -83,6 +84,7 @@ class AppRoutes {
   static const String MY_RANK_PAGE = '/my_rank_page';
   static const String DEAL_HOT_PAGE = '/deal_hot_page';
   static const String EVENT_GUIDE_PAGE = '/event_guide_page';
+    static const String LIST_EVENT_PAGE = '/list_event_page';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -174,6 +176,8 @@ class AppRoutes {
         return fadeRoute(const DealHotPage());
       case EVENT_GUIDE_PAGE:
         return fadeRoute(const EventGuidePage());
+          case LIST_EVENT_PAGE:
+        return fadeRoute(const ListEventPage());
 
       default:
         return slideFromRightRoute(const SplashPage());

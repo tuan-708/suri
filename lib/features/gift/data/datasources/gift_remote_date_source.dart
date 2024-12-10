@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:suri_checking_event_app/core/error/exceptions.dart';
 import 'package:suri_checking_event_app/core/remote/dio/dio_client.dart';
-import 'package:suri_checking_event_app/features/gift/data/models/event_gift_modal.dart';
+import 'package:suri_checking_event_app/features/gift/data/models/event_gift_model.dart';
 import 'package:suri_checking_event_app/features/gift/data/models/gift_account_model.dart';
 import 'package:suri_checking_event_app/features/gift/data/models/gift_model.dart';
 
@@ -116,6 +116,7 @@ class GiftDataSourceImpl implements GiftRemoteDataSource {
         throw const ServerException("Đã xảy ra lỗi khi kết nối đến máy chủ");
       }
     } catch (e) {
+      print(e);
       // Xử lý các lỗi khác
       throw ServerException("$e");
     }

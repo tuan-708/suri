@@ -81,6 +81,7 @@ class _LoginPageState extends State<LoginPage> {
             title: 'Bạn đã hủy bỏ đăng nhập', context: context);
       }
     } catch (e) {
+      print(e);
       ToastHelper.toastInfo(title: e.toString(), context: context);
     }
   }

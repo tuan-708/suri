@@ -62,7 +62,7 @@ class ItemKol extends StatelessWidget {
               borderRadius:
                   BorderRadius.circular(DimensionsHelper.BORDER_RADIUS_4X),
               child: ImageBase(
-                "$BASE_URL${item.photo}",
+                "$BASE_URL${item.photoThumb}",
                 height: DimensionsHelper.ONE_UNIT_SIZE * 170 * 1.25,
                 width: DimensionsHelper.ONE_UNIT_SIZE * 170 * 1.25,
               ),

@@ -14,6 +14,7 @@ class GiftAccountEntity extends Equatable {
   final String? photo;
   final double? price;
   final bool isSender;
+  final String? eventGiftTypeName;
   final int id;
   final int active;
   final String? name;
@@ -41,6 +42,7 @@ class GiftAccountEntity extends Equatable {
     this.photo,
     this.price,
     required this.isSender,
+    this.eventGiftTypeName,
     required this.id,
     required this.active,
     this.name,

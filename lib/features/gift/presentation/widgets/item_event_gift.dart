@@ -67,7 +67,7 @@ class ItemEventGift extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               TextBase(
-                  text: item.eventName,
+                  text: item.eventName!,
                   maxLine: 2,
                   style: TextStyle(
                     fontFamily: Fonts.Lexend.name,
@@ -87,7 +87,7 @@ class ItemEventGift extends StatelessWidget {
                   Expanded(
                     child: TextBase(
                         maxLine: 2,
-                        text: item.eventInfo,
+                        text: item.eventInfo!,
                         style: TextStyle(
                           fontFamily: Fonts.Lexend.name,
                           fontSize: DimensionsHelper.FONT_SIZE_SPAN * 0.9,
@@ -105,7 +105,7 @@ class ItemEventGift extends StatelessWidget {
                 children: [
                   TextBase(
                       text: DateFormat('dd.MM.yyyy - hh:mm')
-                          .format(item.eventStartDate),
+                          .format(item.eventStartDate!),
                       style: TextStyle(
                         fontFamily: Fonts.Lexend.name,
                         fontSize: DimensionsHelper.FONT_SIZE_SPAN * 0.9,
@@ -138,24 +138,41 @@ class ItemEventGift extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Expanded(
-                      child: TextBase(
-                        text: item.giftName,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          TextBase(
+                            text: item.giftName!,
+                            maxLine: 2,
+                            style: TextStyle(
+                                fontFamily: Fonts.Lexend.name,
+                                color: ColorConstants.BLACK,
+                                fontSize: DimensionsHelper.FONT_SIZE_SPAN,
+                                fontWeight: FontWeight.w400),
+                          ),
+                            const SizedBox(
+                            height: 5,
+                            ),
+                               TextBase(
+                        text: item.eventGiftTypeName!,
                         maxLine: 2,
                         style: TextStyle(
                             fontFamily: Fonts.Lexend.name,
                             color: ColorConstants.BLACK,
-                            fontSize: DimensionsHelper.FONT_SIZE_SPAN,
-                            fontWeight: FontWeight.w400),
+                            fontSize: DimensionsHelper.FONT_SIZE_SPAN * .95,
+                            fontWeight: FontWeight.w200),
+                      ),
+                        ],
                       ),
                     ),
-                    if (!item.isSender)
+                    if (!item.isSender!)
                       QrImageView(
                         data: base64Encode(utf8.encode(
                             "{\"GiftId\": ${item.id}, \"AccountId\": $accountId, \"fm\": \"scGift\"}")),
                         version: QrVersions.auto,
                         size: DimensionsHelper.ONE_UNIT_SIZE * 90,
                       ),
-                    if (item.isSender)
+                    if (item.isSender!)
                       SizedBox(
                         height: DimensionsHelper.ONE_UNIT_SIZE * 40,
                         child: TextBase(
@@ -173,26 +190,28 @@ class ItemEventGift extends StatelessWidget {
                 const SizedBox(
                   height: 5,
                 ),
-                Row(
-                  children: [
-                    TextBase(
-                      text: "Giá trị lên đến: ",
-                      style: TextStyle(
-                          fontFamily: Fonts.Lexend.name,
-                          color: ColorConstants.BLACK,
-                          fontSize: DimensionsHelper.FONT_SIZE_SPAN * .95,
-                          fontWeight: FontWeight.w200),
-                    ),
-                    TextBase(
-                      text: PriceHelper.currencyConverterVND(item.price),
-                      style: TextStyle(
-                          fontFamily: Fonts.Lexend.name,
-                          color: ColorConstants.PRIMARY_1,
-                          fontSize: DimensionsHelper.FONT_SIZE_SPAN * .95,
-                          fontWeight: FontWeight.w400),
-                    ),
-                  ],
-                ),
+      
+                if(item.price != null)
+                  Row(
+                    children: [
+                      TextBase(
+                        text: "Giá trị lên đến: ",
+                        style: TextStyle(
+                            fontFamily: Fonts.Lexend.name,
+                            color: ColorConstants.BLACK,
+                            fontSize: DimensionsHelper.FONT_SIZE_SPAN * .95,
+                            fontWeight: FontWeight.w200),
+                      ),
+                      TextBase(
+                        text: PriceHelper.currencyConverterVND(item.price!),
+                        style: TextStyle(
+                            fontFamily: Fonts.Lexend.name,
+                            color: ColorConstants.PRIMARY_1,
+                            fontSize: DimensionsHelper.FONT_SIZE_SPAN * .95,
+                            fontWeight: FontWeight.w400),
+                      ),
+                    ],
+                  ),
                 const SizedBox(
                   height: 5,
                 ),

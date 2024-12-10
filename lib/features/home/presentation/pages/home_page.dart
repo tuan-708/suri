@@ -21,6 +21,7 @@ import 'package:suri_checking_event_app/features/event/presentation/bloc/event_b
 import 'package:suri_checking_event_app/features/event/presentation/bloc/event_event.dart';
 import 'package:suri_checking_event_app/features/event/presentation/bloc/event_state.dart';
 import 'package:suri_checking_event_app/features/event/presentation/pages/event_page.dart';
+import 'package:suri_checking_event_app/features/event/presentation/pages/list_event_page.dart';
 import 'package:suri_checking_event_app/features/home/presentation/widgets/item_banner.dart';
 import 'package:suri_checking_event_app/features/home/presentation/widgets/item_sponsor.dart';
 import 'package:suri_checking_event_app/core/base_widgets/loading_image_card.dart';
@@ -389,7 +390,7 @@ class _HomePageState extends State<HomePage> {
         Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => const EventPage(),
+              builder: (context) => const ListEventPage(),
             ));
       },
       child: Container(
