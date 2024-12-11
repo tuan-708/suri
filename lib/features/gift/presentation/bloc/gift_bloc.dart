@@ -14,6 +14,7 @@ class GiftBloc extends Bloc<GiftEvent, GiftState> {
     on<GiftEvent>((event, emit) {});
     on<GetListGiftOfEvent>(_onLoadListGiftOfEvent);
     on<GetListGiftOfAccount>(_onLoadListGiftOfAccount);
+        on<GetListGiftEvent>(_onLoadListGiftEvent);
   }
 
   Future<void> _onLoadListGiftOfEvent(
@@ -45,6 +46,23 @@ class GiftBloc extends Bloc<GiftEvent, GiftState> {
       });
     } catch (e) {
       emit(ListGiftOfAccountFailure(e.toString()));
+    }
+  }
+
+  
+
+  FutureOr<void> _onLoadListGiftEvent(GetListGiftEvent event, Emitter<GiftState> emit) async {
+      try {
+      emit(GetListGiftEventLoading());
+
+      final res = await giftUseCases.getListEventGift(event.payload);
+      res.fold((l) {
+        emit(GetListGiftEventFailure(l.message));
+      }, (r) {
+        emit(GetListGiftEventSuccess(r));
+      });
+    } catch (e) {
+      emit(GetListGiftEventFailure(e.toString()));
     }
   }
 }

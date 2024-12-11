@@ -87,7 +87,7 @@ class ItemGiftHome extends StatelessWidget {
                   Expanded(
                     child: TextBase(
                         maxLine: 2,
-                        text: item.eventInfo! ?? "",
+                        text: item.eventInfo!,
                         style: TextStyle(
                           fontFamily: Fonts.Lexend.name,
                           fontSize: DimensionsHelper.FONT_SIZE_SPAN * 0.9,
@@ -138,14 +138,28 @@ class ItemGiftHome extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Expanded(
-                      child: TextBase(
-                        text: item.eventGiftName!,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          TextBase(
+                            text: item.eventGiftName!,
+                            maxLine: 2,
+                            style: TextStyle(
+                                fontFamily: Fonts.Lexend.name,
+                                color: ColorConstants.BLACK,
+                                fontSize: DimensionsHelper.FONT_SIZE_SPAN,
+                                fontWeight: FontWeight.w400),
+                          ),
+                           TextBase(
+                        text: item.eventGiftTypeName!,
                         maxLine: 2,
                         style: TextStyle(
                             fontFamily: Fonts.Lexend.name,
                             color: ColorConstants.BLACK,
-                            fontSize: DimensionsHelper.FONT_SIZE_SPAN,
-                            fontWeight: FontWeight.w400),
+                            fontSize: DimensionsHelper.FONT_SIZE_SPAN * .95,
+                            fontWeight: FontWeight.w200),
+                      ),
+                        ],
                       ),
                     ),
                     if (item.accountGiftStatusId == 1002)
@@ -173,36 +187,31 @@ class ItemGiftHome extends StatelessWidget {
                 const SizedBox(
                   height: 5,
                 ),
-                Row(
-                  children: [
-                    TextBase(
-                      text: "Giá trị lên đến: ",
-                      style: TextStyle(
-                          fontFamily: Fonts.Lexend.name,
-                          color: ColorConstants.BLACK,
-                          fontSize: DimensionsHelper.FONT_SIZE_SPAN * .95,
-                          fontWeight: FontWeight.w200),
-                    ),
-                    TextBase(
-                      text: PriceHelper.currencyConverterVND(item.price!),
-                      style: TextStyle(
-                          fontFamily: Fonts.Lexend.name,
-                          color: ColorConstants.PRIMARY_1,
-                          fontSize: DimensionsHelper.FONT_SIZE_SPAN * .95,
-                          fontWeight: FontWeight.w400),
-                    ),
-                  ],
-                ),
+               
+                if(item.price != null)
+                  Row(
+                    children: [
+                      TextBase(
+                        text: "Giá trị lên đến: ",
+                        style: TextStyle(
+                            fontFamily: Fonts.Lexend.name,
+                            color: ColorConstants.BLACK,
+                            fontSize: DimensionsHelper.FONT_SIZE_SPAN * .95,
+                            fontWeight: FontWeight.w200),
+                      ),
+                      TextBase(
+                        text: PriceHelper.currencyConverterVND(item.price!),
+                        style: TextStyle(
+                            fontFamily: Fonts.Lexend.name,
+                            color: ColorConstants.PRIMARY_1,
+                            fontSize: DimensionsHelper.FONT_SIZE_SPAN * .95,
+                            fontWeight: FontWeight.w400),
+                      ),
+                    ],
+                  ),
                 const SizedBox(
                   height: 5,
                 ),
-                // TextBase(
-                //   text: "Đã nhận",
-                //   style: TextStyle(
-                //       color: ColorConstants.PRIMARY_3,
-                //       fontSize: DimensionsHelper.FONT_SIZE_SPAN * .95,
-                //       fontWeight: FontWeight.w400),
-                // ),
               ],
             ),
           ),

@@ -617,7 +617,7 @@ class _QueueTableKOLPageState extends State<QueueTableKOLPage> {
         ),
         Center(
           child: TextBase(
-            text: "300.000.000 VNĐ",
+            text: "200.000.000 VNĐ",
             style: TextStyle(
                 fontFamily: Fonts.Lexend.name,
                 fontSize: DimensionsHelper.FONT_SIZE_SPAN,
@@ -1030,7 +1030,7 @@ class _QueueTableKOLPageState extends State<QueueTableKOLPage> {
                           borderRadius: BorderRadius.circular(
                               DimensionsHelper.BORDER_RADIUS_4X),
                           child: ImageBase(
-                            '$BASE_URL${subList[index].photo}',
+                            '$BASE_URL${subList[index].photoThumb}',
                             height: DimensionsHelper.ONE_UNIT_SIZE * 170 * 1.25,
                             width: DimensionsHelper.ONE_UNIT_SIZE * 170 * 1.25,
                           ),
@@ -1197,7 +1197,7 @@ class _QueueTableKOLPageState extends State<QueueTableKOLPage> {
                     BorderRadius.circular(DimensionsHelper.BORDER_RADIUS_4X),
                 child: Column(
                   children: [
-                    ImageBase("$BASE_URL${data.photo}",
+                    ImageBase("$BASE_URL${data.photoThumb}",
                         width: DimensionsHelper.iziSize.width,
                         height: topKOL == 1
                             ? isTablet

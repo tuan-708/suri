@@ -2,9 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:sentry_flutter/sentry_flutter.dart';
 import 'package:suri_checking_event_app/core/common/common.dart';
-import 'package:suri_checking_event_app/core/helper/logger.dart';
 import 'package:suri_checking_event_app/core/helper/timezone_helper.dart';
 import 'package:suri_checking_event_app/core/routers/app_router.dart';
 import 'package:suri_checking_event_app/di_controller.dart';
@@ -40,42 +38,32 @@ Future<void> main() async {
   // Set timezone
   TimeZoneHelper().initializeTimeZones();
 
-  try {
-    await SentryFlutter.init((options) {
-      options.dsn =
-          'https://a6ec6c881651b948e606d23667e76930@o4508376501583872.ingest.de.sentry.io/4508376505712720';
-
-      options.tracesSampleRate = 1.0;
-    },
-        appRunner: () => runApp(MultiBlocProvider(providers: [
-              // BlocProvider<ConnectivityBloc>(
-              //   create: (context) => sl<ConnectivityBloc>(),
-              // ),
-              BlocProvider<AuthBloc>(
-                create: (context) => sl<AuthBloc>(),
-              ),
-              BlocProvider<MainBloc>(
-                create: (context) => sl<MainBloc>(),
-              ),
-              BlocProvider<HomeBloc>(
-                create: (context) => sl<HomeBloc>(),
-              ),
-              BlocProvider<EventBloc>(
-                create: (context) => sl<EventBloc>(),
-              ),
-              BlocProvider<SponsorBloc>(
-                create: (context) => sl<SponsorBloc>(),
-              ),
-              BlocProvider<GiftBloc>(
-                create: (context) => sl<GiftBloc>(),
-              ),
-              BlocProvider<UserBloc>(
-                create: (context) => sl<UserBloc>(),
-              ),
-            ], child: const MyApp())));
-  } catch (e, stackTrace) {
-    AppLogger.error('App crashed on startup', e, stackTrace);
-  }
+  runApp(MultiBlocProvider(providers: [
+    // BlocProvider<ConnectivityBloc>(
+    //   create: (context) => sl<ConnectivityBloc>(),
+    // ),
+    BlocProvider<AuthBloc>(
+      create: (context) => sl<AuthBloc>(),
+    ),
+    BlocProvider<MainBloc>(
+      create: (context) => sl<MainBloc>(),
+    ),
+    BlocProvider<HomeBloc>(
+      create: (context) => sl<HomeBloc>(),
+    ),
+    BlocProvider<EventBloc>(
+      create: (context) => sl<EventBloc>(),
+    ),
+    BlocProvider<SponsorBloc>(
+      create: (context) => sl<SponsorBloc>(),
+    ),
+    BlocProvider<GiftBloc>(
+      create: (context) => sl<GiftBloc>(),
+    ),
+    BlocProvider<UserBloc>(
+      create: (context) => sl<UserBloc>(),
+    ),
+  ], child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {

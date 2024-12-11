@@ -101,7 +101,7 @@ class _KOLDetailPageState extends State<KOLDetailPage> {
                       _title(),
                       _headerTable(),
                       SizedBox(
-                        height: 300,
+                        height: 280,
                         child: SmartRefresher(
                             enablePullDown: true,
                             enablePullUp: true,
@@ -237,7 +237,7 @@ class _KOLDetailPageState extends State<KOLDetailPage> {
                                             SizedBox(
                                               width: DimensionsHelper
                                                       .ONE_UNIT_SIZE *
-                                                  190,
+                                                  200,
                                               child: TextBase(
                                                   text: DateFormat(
                                                           'hh:mm - dd/MM/yyyy')
@@ -307,7 +307,7 @@ class _KOLDetailPageState extends State<KOLDetailPage> {
             ),
           ),
           SizedBox(
-            width: DimensionsHelper.ONE_UNIT_SIZE * 190,
+            width: DimensionsHelper.ONE_UNIT_SIZE * 200,
             child: TextBase(
                 text: "Thời gian",
                 style: TextStyle(
