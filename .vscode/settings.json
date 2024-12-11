@@ -1,3 +1,4 @@
 {
-    "dart.flutterSdkPath": "/Users/digitalinnovation/Desktop/Dion/FlutterDev/sdk/flutter"
+    // "dart.flutterSdkPath": "/Users/digitalinnovation/Desktop/Dion/FlutterDev/sdk/flutter"
+        "dart.flutterSdkPath": "C:\flutter\flutter"
 }

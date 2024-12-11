@@ -47,6 +47,7 @@ class ImagePathConstants {
   static String IMG_DEAL_HOT_5 = 'assets/images/img_deal_hot_5.png';
   static String IMG_DEAL_HOT_6 = 'assets/images/img_deal_hot_6.png';
   static String IMG_DEAL_HOT_7 = 'assets/images/img_deal_hot_7.png';
+   static String IMG_ZOOM = 'assets/images/img_zoom.png';
 
   //Svgs
   static String IC_ADDRESS = 'assets/svgs/ic_address.svg';

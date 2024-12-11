@@ -102,18 +102,28 @@ class _EventSpecialDetailPageState extends State<EventSpecialDetailPage> {
               ),
               child: Column(
                 children: [
-                  WidgetZoom(
-                    heroAnimationTag: 'tag',
-                    zoomWidget: ClipRRect(
-                      borderRadius: BorderRadius.circular(
-                          DimensionsHelper.BORDER_RADIUS_5X),
-                      child: ImageBase(
-                        "$BASE_URL/upload/admin/banner-1512.jpg",
-                        fit: BoxFit.fitWidth,
-                        width: DimensionsHelper.iziSize.width,
-                        height: DimensionsHelper.ONE_UNIT_SIZE * 220 * 1.25,
+                  Stack(
+                    children: [WidgetZoom(
+                      heroAnimationTag: 'tag',
+                      zoomWidget: ClipRRect(
+                        borderRadius: BorderRadius.circular(
+                            DimensionsHelper.BORDER_RADIUS_5X),
+                        child: ImageBase(
+                          "$BASE_URL/upload/admin/banner-1512.jpg",
+                          fit: BoxFit.fitWidth,
+                          width: DimensionsHelper.iziSize.width,
+                          height: DimensionsHelper.ONE_UNIT_SIZE * 220 * 1.25,
+                        ),
                       ),
                     ),
+                    Positioned(
+                      top: 10,
+                      left: 10,
+                      child: ImageBase(ImagePathConstants.IMG_ZOOM,
+                    width: DimensionsHelper.ONE_UNIT_SIZE * 50,
+                    height: DimensionsHelper.ONE_UNIT_SIZE * 50,
+                    ))
+                    ]
                   ),
                   SizedBox(
                     height: DimensionsHelper.SPACE_SIZE_4X,
