@@ -120,7 +120,6 @@ class SponsorDataSourceImpl implements SponsorRemoteDataSource {
         throw const ServerException("Đã xảy ra lỗi khi kết nối đến máy chủ");
       }
     } catch (e) {
-      print(e);
       // Xử lý các lỗi khác
       throw ServerException("$e");
     }

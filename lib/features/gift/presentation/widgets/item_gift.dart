@@ -142,37 +142,48 @@ class ItemGift extends StatelessWidget {
                 const SizedBox(
                   height: 5,
                 ),
-                Row(
-                  children: [
-                    TextBase(
-                      text: "Giá trị lên đến: ",
-                      style: TextStyle(
-                          fontFamily: Fonts.Lexend.name,
-                          color: ColorConstants.BLACK,
-                          fontSize: DimensionsHelper.FONT_SIZE_SPAN * .95,
-                          fontWeight: FontWeight.w200),
-                    ),
-                    TextBase(
-                      text: PriceHelper.currencyConverterVND(item!.price),
-                      style: TextStyle(
-                          fontFamily: Fonts.Lexend.name,
-                          color: ColorConstants.PRIMARY_1,
-                          fontSize: DimensionsHelper.FONT_SIZE_SPAN * .95,
-                          fontWeight: FontWeight.w400),
-                    ),
-                  ],
-                ),
-                const SizedBox(
-                  height: 5,
-                ),
-                TextBase(
-                  text: "Đã nhận",
-                  style: TextStyle(
-                      fontFamily: Fonts.Lexend.name,
-                      color: ColorConstants.PRIMARY_3,
-                      fontSize: DimensionsHelper.FONT_SIZE_SPAN * .95,
-                      fontWeight: FontWeight.w400),
-                ),
+                if (item!.price == 0)
+                  Row(
+                    children: [
+                      TextBase(
+                        text: "Giá trị: ",
+                        style: TextStyle(
+                            fontFamily: Fonts.Lexend.name,
+                            color: ColorConstants.BLACK,
+                            fontSize: DimensionsHelper.FONT_SIZE_SPAN * .95,
+                            fontWeight: FontWeight.w200),
+                      ),
+                      TextBase(
+                        text: "Chưa xác định",
+                        style: TextStyle(
+                            fontFamily: Fonts.Lexend.name,
+                            color: ColorConstants.PRIMARY_1,
+                            fontSize: DimensionsHelper.FONT_SIZE_SPAN * .95,
+                            fontWeight: FontWeight.w400),
+                      ),
+                    ],
+                  )
+                else
+                  Row(
+                    children: [
+                      TextBase(
+                        text: "Giá trị lên đến: ",
+                        style: TextStyle(
+                            fontFamily: Fonts.Lexend.name,
+                            color: ColorConstants.BLACK,
+                            fontSize: DimensionsHelper.FONT_SIZE_SPAN * .95,
+                            fontWeight: FontWeight.w200),
+                      ),
+                      TextBase(
+                        text: PriceHelper.currencyConverterVND(item!.price),
+                        style: TextStyle(
+                            fontFamily: Fonts.Lexend.name,
+                            color: ColorConstants.PRIMARY_1,
+                            fontSize: DimensionsHelper.FONT_SIZE_SPAN * .95,
+                            fontWeight: FontWeight.w400),
+                      ),
+                    ],
+                  ),
               ],
             ),
           ),

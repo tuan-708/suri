@@ -122,6 +122,7 @@ class ItemGiftHome extends StatelessWidget {
   }
 
   Row _giftInfo(BuildContext context) {
+    print(item.id);
     return Row(
       children: [
         _giftImage(context),
@@ -150,15 +151,15 @@ class ItemGiftHome extends StatelessWidget {
                                 fontSize: DimensionsHelper.FONT_SIZE_SPAN,
                                 fontWeight: FontWeight.w400),
                           ),
-                           TextBase(
-                        text: item.eventGiftTypeName!,
-                        maxLine: 2,
-                        style: TextStyle(
-                            fontFamily: Fonts.Lexend.name,
-                            color: ColorConstants.BLACK,
-                            fontSize: DimensionsHelper.FONT_SIZE_SPAN * .95,
-                            fontWeight: FontWeight.w200),
-                      ),
+                          TextBase(
+                            text: item.eventGiftTypeName!,
+                            maxLine: 2,
+                            style: TextStyle(
+                                fontFamily: Fonts.Lexend.name,
+                                color: ColorConstants.BLACK,
+                                fontSize: DimensionsHelper.FONT_SIZE_SPAN * .95,
+                                fontWeight: FontWeight.w200),
+                          ),
                         ],
                       ),
                     ),
@@ -187,8 +188,7 @@ class ItemGiftHome extends StatelessWidget {
                 const SizedBox(
                   height: 5,
                 ),
-               
-                if(item.price != null)
+                if (item.price != null)
                   Row(
                     children: [
                       TextBase(

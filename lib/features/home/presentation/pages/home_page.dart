@@ -20,7 +20,6 @@ import 'package:suri_checking_event_app/features/event/data/models/list_event_pa
 import 'package:suri_checking_event_app/features/event/presentation/bloc/event_bloc.dart';
 import 'package:suri_checking_event_app/features/event/presentation/bloc/event_event.dart';
 import 'package:suri_checking_event_app/features/event/presentation/bloc/event_state.dart';
-import 'package:suri_checking_event_app/features/event/presentation/pages/event_page.dart';
 import 'package:suri_checking_event_app/features/event/presentation/pages/list_event_page.dart';
 import 'package:suri_checking_event_app/features/home/presentation/widgets/item_banner.dart';
 import 'package:suri_checking_event_app/features/home/presentation/widgets/item_sponsor.dart';
@@ -49,7 +48,7 @@ class _HomePageState extends State<HomePage> {
   final sharedHelper = sl.get<SharedPreferenceHelper>();
 
   late int pageIndex = 1;
-  late int pageSize = 6;
+  late int pageSize = 20;
   late bool isKol = true;
   final _sharedHelper = sl.get<SharedPreferenceHelper>();
 
@@ -354,13 +353,13 @@ class _HomePageState extends State<HomePage> {
             return CarouselSlider(
                 options: CarouselOptions(
                   autoPlay: false,
-                  aspectRatio: 1.7,
+                  aspectRatio: 1.3,
                   enlargeCenterPage: true,
                 ),
                 items: imgList
                     .map((item) => LoadingImageCard(
                           width: DimensionsHelper.iziSize.width * 0.8,
-                          height: DimensionsHelper.ONE_UNIT_SIZE * 420,
+                          height: DimensionsHelper.ONE_UNIT_SIZE * 475,
                         ))
                     .toList());
           }
@@ -370,6 +369,7 @@ class _HomePageState extends State<HomePage> {
                 options: CarouselOptions(
                   autoPlay: false,
                   aspectRatio: 1.3,
+                  initialPage: 6,
                   enlargeCenterPage: true,
                 ),
                 items: (state.list ?? [])

@@ -54,7 +54,7 @@ class ModalVoteSuccess extends StatelessWidget {
                   onTap: () {
                     Navigator.pop(context);
                   },
-                  title: "Tiết tục bình chọn",
+                  title: "Tiếp tục bình chọn",
                   fonSize: DimensionsHelper.FONT_SIZE_SPAN,
                   height: DimensionsHelper.ONE_UNIT_SIZE * 70,
                   borderRadius: DimensionsHelper.BLUR_RADIUS_3X,

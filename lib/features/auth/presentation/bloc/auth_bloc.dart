@@ -15,6 +15,9 @@ part 'auth_state.dart';
 
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final AuthUseCases authUseCases;
+  static const int maxAttempts = 10;
+  static const int lockDuration = 60 * 5;
+  late int _attempts = 0;
 
   AuthBloc({required this.authUseCases}) : super(AuthInitial()) {
     on<AuthEvent>((event, emit) {});
@@ -33,13 +36,28 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       final res = await authUseCases.postLogin(event.payload);
 
       res.fold(
-        (l) => emit(LoginFailure(l.message)),
+        (l) {
+          _attempts++;
+          if (_attempts > maxAttempts) {
+            emit(LoginLocked(
+                DateTime.now().add(const Duration(seconds: lockDuration))));
+          } else {
+            emit(LoginFailure(l.message));
+          }
+        },
         (r) {
+          _attempts = 0;
           emit(LoginSuccess(r));
         },
       );
     } catch (e) {
-      emit(LoginFailure(e.toString()));
+      _attempts++;
+      if (_attempts >= maxAttempts) {
+        emit(LoginLocked(
+            DateTime.now().add(const Duration(seconds: lockDuration))));
+      } else {
+        emit(LoginFailure(e.toString()));
+      }
     }
   }
 

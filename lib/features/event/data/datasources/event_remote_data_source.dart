@@ -49,10 +49,9 @@ class EventDataSourceImpl implements EventRemoteDataSource {
         final statusCode = dioError.response?.statusCode;
         throw const ServerException("Không tìm thấy sự kiện!");
       } else {
-        throw ServerException("Đã xảy ra lỗi khi kết nối đến máy chủ");
+        throw const ServerException("Đã xảy ra lỗi khi kết nối đến máy chủ");
       }
     } catch (e) {
-      print(e);
       // Xử lý các lỗi khác
       throw ServerException("$e");
     }
@@ -86,7 +85,7 @@ class EventDataSourceImpl implements EventRemoteDataSource {
         final statusCode = dioError.response?.statusCode;
         throw const ServerException("Không tìm thấy sự kiện!");
       } else {
-        throw ServerException("Đã xảy ra lỗi khi kết nối đến máy chủ");
+        throw const ServerException("Đã xảy ra lỗi khi kết nối đến máy chủ");
       }
     } catch (e) {
       // Xử lý các lỗi khác
@@ -121,7 +120,7 @@ class EventDataSourceImpl implements EventRemoteDataSource {
         final statusCode = dioError.response?.statusCode;
         throw const ServerException("Đăng ký sự kiện thất bại!");
       } else {
-        throw ServerException("Đã xảy ra lỗi khi kết nối đến máy chủ");
+        throw const ServerException("Đã xảy ra lỗi khi kết nối đến máy chủ");
       }
     } catch (e) {
       // Xử lý các lỗi khác
@@ -154,7 +153,7 @@ class EventDataSourceImpl implements EventRemoteDataSource {
         final statusCode = dioError.response?.statusCode;
         throw const ServerException("Không tìm vé mời!");
       } else {
-        throw ServerException("Đã xảy ra lỗi khi kết nối đến máy chủ");
+        throw const ServerException("Đã xảy ra lỗi khi kết nối đến máy chủ");
       }
     } catch (e) {
       // Xử lý các lỗi khác
@@ -211,7 +210,7 @@ class EventDataSourceImpl implements EventRemoteDataSource {
         final statusCode = dioError.response?.statusCode;
         throw const ServerException("Qúet mã sự kiện thất bại!");
       } else {
-        throw ServerException("Đã xảy ra lỗi khi kết nối đến máy chủ");
+        throw const ServerException("Đã xảy ra lỗi khi kết nối đến máy chủ");
       }
     } catch (e) {
       // Xử lý các lỗi khác
@@ -244,7 +243,7 @@ class EventDataSourceImpl implements EventRemoteDataSource {
         final statusCode = dioError.response?.statusCode;
         throw const ServerException("Không tìm vé mời!");
       } else {
-        throw ServerException("Đã xảy ra lỗi khi kết nối đến máy chủ");
+        throw const ServerException("Đã xảy ra lỗi khi kết nối đến máy chủ");
       }
     } catch (e) {
       // Xử lý các lỗi khác

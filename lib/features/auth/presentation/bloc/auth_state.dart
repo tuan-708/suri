@@ -23,6 +23,14 @@ class LoginFailure extends AuthState {
   List<Object?> get props => [error];
 }
 
+class LoginLocked extends AuthState {
+  final DateTime unlockTime;
+  LoginLocked(this.unlockTime);
+
+  @override
+  List<Object?> get props => [unlockTime];
+}
+
 // Register
 class RegisterLoading extends AuthState {}
 

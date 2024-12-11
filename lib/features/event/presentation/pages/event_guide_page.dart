@@ -959,7 +959,7 @@ class _EventGuidePageState extends State<EventGuidePage> {
 
   AppBarBase _header() {
     return AppBarBase(
-        title: 'Deal hot',
+        title: 'Hướng dẫn',
         centerTitle: true,
         backgroundColor: Colors.white,
         elevation: 0,

@@ -68,9 +68,11 @@ class _EventSpecialDetailPageState extends State<EventSpecialDetailPage> {
         () => Navigator.pushNamed(context, AppRoutes.EVENT_TIMELINE_PAGE),
         () => Navigator.pushNamed(context, AppRoutes.QUEUE_TABLE_KOL_PAGE),
         () => Navigator.pushNamed(context, AppRoutes.MY_RANK_PAGE),
-        () => Navigator.pushNamed(context, AppRoutes.TICKET_SPECIAL_PAGE,
-            arguments:
-                TicketInfoSpecialPageArguments(event: widget.args.event)),
+        () {
+          Navigator.pushNamed(context, AppRoutes.TICKET_SPECIAL_PAGE,
+              arguments:
+                  TicketInfoSpecialPageArguments(event: widget.args.event));
+        },
         () => Navigator.pushNamed(context, AppRoutes.SPIN_WHEEL_PAGE,
             arguments: SpinWheelArguments(
                 eventId: widget.args.event.id,
@@ -102,28 +104,18 @@ class _EventSpecialDetailPageState extends State<EventSpecialDetailPage> {
               ),
               child: Column(
                 children: [
-                  Stack(
-                    children: [WidgetZoom(
-                      heroAnimationTag: 'tag',
-                      zoomWidget: ClipRRect(
-                        borderRadius: BorderRadius.circular(
-                            DimensionsHelper.BORDER_RADIUS_5X),
-                        child: ImageBase(
-                          "$BASE_URL/upload/admin/banner-1512.jpg",
-                          fit: BoxFit.fitWidth,
-                          width: DimensionsHelper.iziSize.width,
-                          height: DimensionsHelper.ONE_UNIT_SIZE * 220 * 1.25,
-                        ),
+                  WidgetZoom(
+                    heroAnimationTag: 'tag',
+                    zoomWidget: ClipRRect(
+                      borderRadius: BorderRadius.circular(
+                          DimensionsHelper.BORDER_RADIUS_5X),
+                      child: ImageBase(
+                        "$BASE_URL/upload/admin/banner-1512.jpg",
+                        fit: BoxFit.fitWidth,
+                        width: DimensionsHelper.iziSize.width,
+                        height: DimensionsHelper.ONE_UNIT_SIZE * 220 * 1.25,
                       ),
                     ),
-                    Positioned(
-                      top: 10,
-                      left: 10,
-                      child: ImageBase(ImagePathConstants.IMG_ZOOM,
-                    width: DimensionsHelper.ONE_UNIT_SIZE * 50,
-                    height: DimensionsHelper.ONE_UNIT_SIZE * 50,
-                    ))
-                    ]
                   ),
                   SizedBox(
                     height: DimensionsHelper.SPACE_SIZE_4X,

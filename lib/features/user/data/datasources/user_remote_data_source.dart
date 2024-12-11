@@ -134,7 +134,6 @@ class UserDataSourceImpl implements UserRemoteDataSource {
         throw const ServerException("Số điện thoại đã được sử dụng!");
       }
       if (response.data["status"] == "202") {
-        print('object');
         throw const ServerException("Email đã được sử dụng!");
       }
       throw const ServerException("Thay đổi thông tin tài khoản thất bại!");

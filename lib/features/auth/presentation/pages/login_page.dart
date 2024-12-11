@@ -71,7 +71,7 @@ class _LoginPageState extends State<LoginPage> {
         LoginGooglePayload payload = LoginGooglePayload(
             Email: user.user!.email ?? "",
             FullName: user.user!.displayName ?? "",
-            Photo: user.user!.photoURL,
+            Photo: user.user!.photoURL ?? '',
             Id: user.user!.uid);
 
         context.read<AuthBloc>().add(PostLoginGoogle(payload));
@@ -81,7 +81,6 @@ class _LoginPageState extends State<LoginPage> {
             title: 'Bạn đã hủy bỏ đăng nhập', context: context);
       }
     } catch (e) {
-      print(e);
       ToastHelper.toastInfo(title: e.toString(), context: context);
     }
   }
@@ -462,6 +461,17 @@ class _LoginPageState extends State<LoginPage> {
             horizontal: DimensionsHelper.HORIZONTAL_SCREEN),
         child: BlocConsumer<AuthBloc, AuthState>(
           listener: (context, state) async {
+            if (state is LoginLocked) {
+              final timeLeft =
+                  state.unlockTime.difference(DateTime.now()).inSeconds;
+              ToastHelper.toastError(
+                  title: 'Tài khoản bị khóa. Thử lại sau $timeLeft giây.',
+                  context: context);
+              setState(() {
+                isLoading = false;
+              });
+            }
+
             if (state is LoginSuccess) {
               ToastHelper.toastSuccess(
                   title: "Đăng nhập tài khoản thành công!", context: context);

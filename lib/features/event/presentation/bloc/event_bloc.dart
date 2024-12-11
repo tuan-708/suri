@@ -121,7 +121,6 @@ class EventBloc extends Bloc<EventEvent, EventState> {
         emit(EventDetailSuccess(r));
       });
     } catch (e) {
-      print(e);
       emit(EventDetailFailure(e.toString()));
     }
   }

@@ -50,7 +50,8 @@ class ItemBanner extends StatelessWidget {
                 width: DimensionsHelper.iziSize.width * 0.8,
                 height: isTablet
                     ? DimensionsHelper.ONE_UNIT_SIZE * 800
-                    : DimensionsHelper.ONE_UNIT_SIZE * 450,
+                    : DimensionsHelper.ONE_UNIT_SIZE * 475,
+                fit: BoxFit.fill,
               )),
             ),
           ),

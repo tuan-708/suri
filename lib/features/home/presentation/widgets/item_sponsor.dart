@@ -42,6 +42,7 @@ class ItemSponsor extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
+                padding: EdgeInsets.all(DimensionsHelper.SPACE_SIZE_3X),
                 clipBehavior: Clip.hardEdge,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.only(
@@ -49,12 +50,16 @@ class ItemSponsor extends StatelessWidget {
                             Radius.circular(DimensionsHelper.BORDER_RADIUS_5X),
                         topRight: Radius.circular(
                             DimensionsHelper.BORDER_RADIUS_5X))),
-                child: ImageBase(
-                  '$BASE_URL$imageUrl',
-                  height: isTablet
-                      ? DimensionsHelper.ONE_UNIT_SIZE * 400
-                      : DimensionsHelper.ONE_UNIT_SIZE * 225,
-                  fit: BoxFit.scaleDown,
+                child: ClipRRect(
+                  borderRadius:
+                      BorderRadius.circular(DimensionsHelper.BORDER_RADIUS_3X),
+                  child: ImageBase(
+                    '$BASE_URL$imageUrl',
+                    height: isTablet
+                        ? DimensionsHelper.ONE_UNIT_SIZE * 400
+                        : DimensionsHelper.ONE_UNIT_SIZE * 200,
+                    fit: BoxFit.scaleDown,
+                  ),
                 ),
               ),
               Container(
