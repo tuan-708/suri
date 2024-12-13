@@ -122,7 +122,6 @@ class ItemGiftHome extends StatelessWidget {
   }
 
   Row _giftInfo(BuildContext context) {
-    print(item.id);
     return Row(
       children: [
         _giftImage(context),

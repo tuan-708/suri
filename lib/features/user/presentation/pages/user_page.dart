@@ -402,7 +402,16 @@ class _UserPageState extends State<UserPage> with WidgetsBindingObserver {
             _sharedHelper.setLogged(status: false);
             _sharedHelper.setProfile('');
 
-            Navigator.pushNamed(context, AppRoutes.LOGIN_PAGE);
+            Navigator.pushAndRemoveUntil(
+              context,
+              MaterialPageRoute(
+                builder: (_) => BlocProvider(
+                  create: (_) => MainBloc(),
+                  child: const LoginPage(),
+                ),
+              ),
+              (route) => false,
+            );
           }
           if (current is PostDeleteAccountFailure) {
             ToastHelper.toastError(
